@@ -10,8 +10,14 @@ function Book(title, author, pages, read) {
   }
 }
 
+Book.prototype.info = function () {
+  return `${title} by ${author}, ${pages} pages, ${read}.`
+}
+
 let book1 = new Book('Harry Potter', 'J.K Rowling', '560', 'Have Read')
+let book2 = new Book('Harry dadsa', 'J.K dsadasasd', '21', 'Have no')
 myLibrary.push(book1)
+myLibrary.push(book2)
 
 function addBookToLibrary() {
   let title = prompt('Enter Title')
@@ -24,6 +30,8 @@ function addBookToLibrary() {
   // bookData()
   let p = document.querySelector('p')
   p.textContent = Object.values(newBook.info().split('  '))
+  // p.textContent = prompt('ds')
+  bookData()
 }
 
 window.onload = function () {
@@ -31,12 +39,12 @@ window.onload = function () {
 }
 
 function bookData() {
-  for (books of myLibrary) {
+  for (let books of myLibrary) {
     let main = document.querySelector('.main')
     let p = document.createElement('p')
     p.textContent = Object.values(books.info().split('  '))
     main.appendChild(p)
     console.log(books)
-    // return books
+    return books
   }
 }
