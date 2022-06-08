@@ -1,17 +1,15 @@
 let myLibrary = []
 
-function Book(title, author, pages, read) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = read
-  this.info = function () {
-    return `${title} by ${author}, ${pages} pages, ${read}.`
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
   }
-}
-
-Book.prototype.info = function () {
-  return `${title} by ${author}, ${pages} pages, ${read}.`
+  info() {
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}.`
+  }
 }
 
 let book1 = new Book('Harry Potter', 'J.K Rowling', '560', 'Have Read')
